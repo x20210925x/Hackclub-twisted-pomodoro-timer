@@ -3,14 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twisted Test</title>
+
+    <title>Pomodoro Timer</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>My first twisted project</h1>
-    <p id="message">VS Code + GitHub + Hackatime test</p>
 
-    <button onclick="changeMessage()">Click me</button>
+<body>
+    
+    <main>
+        <h1>Pomodoro timer</h1>
+
+        <p id="mode">Focus</p>
+
+        <div id="timer"> 
+            25:00 
+        </div>
+        
+        <div id="controls">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn">Pause</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+
+        <section>
+            <h2>Current Task</h2>
+
+            <input 
+                type="text" 
+                id="task-input" 
+                placeholder="Enter your task here"
+            >
+        </section>
+
+        <p>
+            Sessions Completed: 
+            <span id="session-count">0</span>
+        </p>
+    </main>
 
     <script src="script.js"></script>
 </body>
+</html>
