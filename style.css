@@ -1,5 +1,112 @@
 body {
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2937;
+}
+
+main {
+  width: 420px;
+  padding: 32px;
+
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
   text-align: center;
-  margin-top: 100px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 32px;
+}
+
+#mode {
+  display: inline-block;
+  padding: 8px 18px;
+
+  background-color: #ffe4e4;
+  color: #c62828;
+
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+#timer {
+  margin: 24px 0;
+  font-size: 72px;
+  font-weight: bold;
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  margin-bottom: 28px;
+}
+
+button {
+  padding: 12px 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#start-btn {
+  background-color: #e54848;
+  color: white;
+}
+
+#reset-btn,
+#reset-session-count-btn {
+  background-color: #eef1f4;
+  color: #374151;
+}
+
+section {
+  text-align: left;
+}
+
+section h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+#task-input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+
+  font-size: 16px;
+}
+
+#session-count {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#reset-session-count-btn {
+  margin-top: 8px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.98);
 }
