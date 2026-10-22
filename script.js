@@ -1,9 +1,17 @@
 const timerDisplay = document.getElementById('timer');
 const startBtn = document.getElementById('start-btn');
 const resetBtn = document.getElementById('reset-btn');
+const modeDisplay = document.getElementById('mode');
+const sessionCountDisplay = document.getElementById('session-count');
 
-let timer_left = 25*60; // 25 minutes in seconds
+
+const BREAK_TIME = 5 * 60; // 5 minutes in seconds
+const FOCUS_TIME = 25 * 60; // 25 minutes in seconds
+
+let timer_left = FOCUS_TIME; 
 let timerInterval = null;
+let is_focus = true;
+let session_count = 0;
 
 function updateTimerDisplay() {
     const minutes = Math.floor(timer_left / 60);
@@ -20,6 +28,23 @@ startBtn.addEventListener('click', function () {
 
     timerInterval = setInterval(function() {
         timer_left--;
+
+        if (timer_left <= 0) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+
+            if (is_focus) {
+                is_focus = false;
+                timer_left = BREAK_TIME;
+                modeDisplay.textContent = 'Break';
+                session_count++;
+                sessionCountDisplay.textContent = session_count;
+            }else {
+                is_focus = true;
+                timer_left = FOCUS_TIME;
+                modeDisplay.textContent = 'Focus';
+            }
+        }
         updateTimerDisplay();
     }, 1000)
 })
@@ -28,6 +53,9 @@ resetBtn.addEventListener('click', function () {
     clearInterval(timerInterval);
     timerInterval = null;
 
-    timer_left = 25 * 60;
+    is_focus = true;
+    timer_left = FOCUS_TIME;
+    modeDisplay.textContent = 'Focus';
+
     updateTimerDisplay();
 })
