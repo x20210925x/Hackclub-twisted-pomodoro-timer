@@ -32,4 +32,4 @@ A simple Pomodoro timer built with HTML, CSS, and JavaScript.
 
 ## Live Demo
 
-GitHub Pages link:
+[GitHub Pages link](https://x20210925x.github.io/Hackclub-twisted-pomodoro-timer/)
